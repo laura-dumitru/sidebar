@@ -1,0 +1,63 @@
+body {
+  background-color: #eec29e;
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+}
+h1,
+p,
+main {
+  display: flex;
+  justify-content: center;
+}
+.instructions {
+  font-size: 1.3em;
+}
+.sidebar {
+  background-image: url(images/background.jpg);
+  background-size: cover;
+  width: 30vw;
+  height: 100%;
+  border: 1px solid #2d1913;
+}
+
+.drag {
+  background-color: white;
+  width: 5vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.drag img {
+  opacity: 0;
+  width: 100px;
+  height: 100px;
+}
+.drag p {
+  display: none;
+}
+.arrow {
+  opacity: 0;
+}
+button {
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-weight: bold;
+  font-size: 0.9em;
+  border: none;
+  padding: 1em 3em;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #2d1913;
+  background-color: #eec29e;
+}
+svg.lucide {
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  top: 50%;
+  left: 38%;
+  stroke-width: 1px;
+}

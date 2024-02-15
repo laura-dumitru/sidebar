@@ -1,21 +1,7 @@
 lucide.createIcons();
-/*
-const drag = document.querySelector(".drag");
-const sidebar = document.querySelector(".sidebar");
-
-drag.addEventListener("pointermove", handleMove);
-
-function handleMove(event) {
-    const x = event.pageX;
-  const width = sidebar.offsetWidth; // Get the width of the sidebar container
-  drag.style.width = width + "px";
-  console.log(x);
-}*/
 
 const sidebar = document.querySelector(".sidebar");
 const content = document.querySelector(".content");
-//const content = sidebar.content
-
 const images = document.querySelectorAll(".image");
 const icon = sidebar.querySelector(".arrow");
 //let isDragging = false; // Flag to indicate whether dragging is active
@@ -35,7 +21,6 @@ function stopDrag() {
 
 function handleMove(event) {
   event.preventDefault();
-  //if (!isDragging) return; // Exit if dragging is not active
   //const width = sidebar.offsetWidth; // Get the width of the sidebar container
 
   const width = sidebar.clientWidth;
@@ -49,7 +34,7 @@ function handleMove(event) {
 
   //sidebar.style.width = "50%";
 
-  //content.style.visibility = "visible";
+  content.style.visibility = "visible";
 }
 
 /*

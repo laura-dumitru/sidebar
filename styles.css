@@ -3,42 +3,59 @@ body {
   font-family: "Crimson Text", serif;
   font-weight: 400;
 }
-h1,
-p,
+
 main {
   display: flex;
-  justify-content: center;
+  margin: 0 auto;
+  width: 33vw;
+  height: 80vh;
+  background-image: url(images/background.jpg);
+  background-size: cover;
+  border: 1px solid #2d1913;
+  overflow: hidden;
 }
+
+h1,
+p {
+  text-align: center;
+}
+
 .instructions {
   font-size: 1.3em;
 }
 .sidebar {
-  background-image: url(images/background.jpg);
-  background-size: cover;
-  width: 30vw;
-  height: 100%;
-  border: 1px solid #2d1913;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: end;
+  /* width: 20%; */
+  background-color: white;
+  transform: translateX(-80%);
+  /* transition: transform 0.5s ease-in-out; */
 }
 
-.drag {
-  background-color: white;
-  width: 5vw;
-  height: 80vh;
+.content {
+  visibility: hidden;
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
-.drag img {
-  opacity: 0;
-  width: 100px;
-  height: 100px;
+.content img {
+  /* position: relative; */
+  /* top: 4em; */
+  width: 100%;
 }
-.drag p {
-  display: none;
+
+svg.lucide {
+  height: 2em;
+  width: 2em;
+  stroke-width: 1px;
 }
-.arrow {
-  opacity: 0;
+
+svg[data-lucide="chevrons-right"] {
+  stroke: red;
 }
+
 button {
   font-family: "Crimson Text", serif;
   font-weight: 400;
@@ -52,12 +69,4 @@ button {
   transform: translate(-50%, -50%);
   border: 1px solid #2d1913;
   background-color: #eec29e;
-}
-svg.lucide {
-  height: 32px;
-  width: 32px;
-  position: absolute;
-  top: 50%;
-  left: 38%;
-  stroke-width: 1px;
 }

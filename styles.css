@@ -58,7 +58,7 @@ svg.lucide {
   stroke-width: 1px;
 }
 
-svg[data-lucide="chevrons-right"] {
+svg[data-lucide^="chevrons-"] {
   stroke: #2d1913;
   position: absolute;
   top: 50%;

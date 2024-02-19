@@ -30,7 +30,8 @@ p {
   justify-content: flex-start;
   /* width: 20%; */
   background-color: white;
-  transform: translateX(-80%);
+  transform: translateX(-85%);
+  cursor: pointer;
   /* transition: transform 0.5s ease-in-out; */
 }
 
@@ -52,35 +53,40 @@ p {
 }
 
 svg.lucide {
-  height: 3em;
-  width: 3em;
+  height: 2em;
+  width: 2em;
   stroke-width: 1px;
 }
 
 svg[data-lucide="chevrons-right"] {
   stroke: #2d1913;
-  position: relative;
-  transform: translateY(-50%);
+  position: absolute;
   top: 50%;
-  left: 10%;
+  right: 0;
+  transform: translateY(-50%);
 }
+
 svg[data-lucide="chevron-up"],
 svg[data-lucide="chevron-down"] {
+  height: 4em;
+  width: 4em;
+  stroke-width: 0.5px;
   stroke: #2d1913;
   position: relative;
   transform: translateX(-50%);
 }
 
 svg[data-lucide="chevron-up"] {
-  top: 5%;
+  top: 10%;
   left: 50%;
 }
 svg[data-lucide="chevron-down"] {
-  top: 80%;
+  top: 75%;
   left: 50%;
 }
 
 button {
+  outline: none;
   font-family: "Crimson Text", serif;
   font-weight: 400;
   font-weight: bold;
@@ -91,6 +97,6 @@ button {
   top: 90%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 2px solid #2d1913;
+  border: 1px solid #2d1913;
   background: transparent;
 }

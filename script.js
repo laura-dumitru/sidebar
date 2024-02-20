@@ -7,31 +7,36 @@ const icon = sidebar.querySelector(".arrow");
 const pulseArrow = document.querySelector(".right");
 const arrowUp = document.querySelector(".arrow-up");
 const arrowDown = document.querySelector(".arrow-down");
-const chevronsRight = document.querySelector("[data-lucide='chevrons-right']");
+const chevronsSelector = "[data-lucide^='chevrons-']";
+const chevrons = document.querySelector(chevronsSelector);
 
 //let isDragging = false; // Flag to indicate whether dragging is active
 
 let visibilityPercentage;
 
 sidebar.addEventListener("pointerdown", startDrag);
+
 document.addEventListener("pointerup", (event) => {
+  const left = document.createElement("i");
+  left.setAttribute("data-lucide", "chevrons-left");
+  const right = document.createElement("i");
+  right.setAttribute("data-lucide", "chevrons-right");
+
   if (visibilityPercentage > 99) {
-    chevronsRight.setAttribute("data-lucide", "chevrons-left");
+    if (sidebar.contains(chevrons)) sidebar.removeChild(chevrons);
+    sidebar.replaceChild(left, sidebar.firstChild);
     lucide.createIcons();
     animation();
-  } else if (visibilityPercentage <= 0) {
-    console.log("I am zero");
-    // chevronsRight.style.display = "none";
-    chevronsRight.setAttribute("data-lucide", "chevrons-right");
-
-    console.log(chevronsRight.getAttribute("data-lucide"));
+  } else if (visibilityPercentage < 1) {
+    sidebar.replaceChild(right, sidebar.firstChild);
     lucide.createIcons();
+    animation();
   }
   stopDrag(event);
 });
 
 function animation() {
-  gsap.to(".right", {
+  gsap.to(chevronsSelector, {
     x: "+=4", // Increase position to the right by 10 units
     repeat: 3, // Repeat indefinitely
     yoyo: true, // Reverse the animation to return to the initial position

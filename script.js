@@ -1,38 +1,38 @@
 lucide.createIcons();
 
 const sidebar = document.querySelector(".sidebar");
+const drag = document.querySelector(".sidebar .drag");
 const content = document.querySelector(".content");
 const images = document.querySelectorAll(".image");
 const icon = sidebar.querySelector(".arrow");
-const pulseArrow = document.querySelector(".right");
 const arrowUp = document.querySelector(".arrow-up");
 const arrowDown = document.querySelector(".arrow-down");
 const chevronsSelector = "[data-lucide^='chevrons-']";
 const chevrons = document.querySelector(chevronsSelector);
 
-//let isDragging = false; // Flag to indicate whether dragging is active
-
 let visibilityPercentage;
 
-sidebar.addEventListener("pointerdown", startDrag);
+drag.addEventListener("pointerdown", startDrag);
 
 document.addEventListener("pointerup", (event) => {
-  const left = document.createElement("i");
-  left.setAttribute("data-lucide", "chevrons-left");
-  const right = document.createElement("i");
-  right.setAttribute("data-lucide", "chevrons-right");
-
   if (visibilityPercentage > 99) {
-    if (sidebar.contains(chevrons)) sidebar.removeChild(chevrons);
-    sidebar.replaceChild(left, sidebar.firstChild);
-    lucide.createIcons();
-    animation();
+    drag.innerHTML = '<i data-lucide="chevrons-left"></i>';
   } else if (visibilityPercentage < 1) {
-    sidebar.replaceChild(right, sidebar.firstChild);
-    lucide.createIcons();
-    animation();
+    drag.innerHTML = '<i data-lucide="chevrons-right"></i>';
   }
+  //console.log(event); FIXME
+  lucide.createIcons();
   stopDrag(event);
+
+  const attribute = event.target.getAttribute("data-lucide");
+
+  if (attribute === "chevron-up") {
+    console.log("ARROW UP");
+  }
+
+  if (attribute === "chevron-down") {
+    console.log("ARROW DOWN");
+  }
 });
 
 function animation() {
@@ -47,48 +47,40 @@ function animation() {
 animation();
 
 function startDrag(event) {
-  //isDragging = true; // Set dragging flag to true when drag starts
   document.addEventListener("pointermove", handleMove);
 }
 
 function stopDrag() {
-  //isDragging = false; // Set dragging flag to false when drag stops
+  animation();
   document.removeEventListener("pointermove", handleMove);
 }
 
 function handleMove(event) {
-  event.preventDefault();
-
   const width = sidebar.clientWidth;
   const x = event.clientX;
 
   // Calculate the percentage of sidebar visibility based on pointer position
   visibilityPercentage = Math.max(0, Math.min(100, ((x - width) / width) * 100));
-  console.log(visibilityPercentage);
   // Calculate the translateX value to move the sidebar
   const translateValue = `${-85 + (visibilityPercentage / 100) * 85}%`;
   // Set the sidebar's position accordingly
   sidebar.style.transform = `translateX(${translateValue})`;
 
-  // Adjust content visibility based on sidebar visibility
+  /*/ Adjust content visibility based on sidebar visibility
   if (visibilityPercentage > 0) {
     content.style.visibility = "visible";
   } else {
     content.style.visibility = "hidden";
-  }
+  }*/
 }
-arrowUp.addEventListener("click", function () {
-  console.log("Click up");
-});
-arrowDown.addEventListener("click", function () {
-  console.log("Click down");
-});
-/*
-if (x > sidebarDrag.size.width && x <= width) {
-  // 390 (is the right edge of the screen)
-  sidebar.style.transform = `translateX(${x - width}px)`; // translateX refers by default to the left edge of the gallery
 
-  sidebarOpened = true;
-  mediator("Sidebar open");
-}
-*/
+/*
+arrowUp.addEventListener("pointerdown", function (event) {
+  //event.stopImmediatePropagation();
+  console.log("UP");
+});
+
+arrowDown.addEventListener("pointerdown", function (event) {
+  //event.stopImmediatePropagation();
+  console.log("DOWN");
+});*/

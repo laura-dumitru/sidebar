@@ -1,3 +1,9 @@
+/*
+@font-face {
+  font-family: "LucideIcons";
+  src: url(https://unpkg.com/lucide-static@latest/font/Lucide.ttf) format("truetype");
+}*/
+
 body {
   background-color: #eec29e;
   font-family: "Crimson Text", serif;
@@ -31,8 +37,11 @@ p {
   /* width: 20%; */
   background-color: white;
   transform: translateX(-85%);
-  cursor: pointer;
+  cursor: grab;
   /* transition: transform 0.5s ease-in-out; */
+}
+.sidebar:active {
+  cursor: grabbing;
 }
 
 .content {
@@ -62,7 +71,7 @@ svg[data-lucide^="chevrons-"] {
   stroke: #2d1913;
   position: absolute;
   top: 50%;
-  right: 0;
+  right: 1em;
   transform: translateY(-50%);
 }
 

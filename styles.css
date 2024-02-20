@@ -5,7 +5,7 @@
 }*/
 
 body {
-  background-color: #eec29e;
+  background-color: white;
   font-family: "Crimson Text", serif;
   font-weight: 400;
 }
@@ -27,25 +27,29 @@ p {
 }
 
 .instructions {
-  font-size: 1.3em;
+  font-size: 1.5em;
 }
 .sidebar {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  /* width: 20%; */
   background-color: white;
   transform: translateX(-85%);
-  cursor: grab;
-  /* transition: transform 0.5s ease-in-out; */
 }
-.sidebar:active {
+.sidebar .drag {
+  background-color: #f9d8be;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 15%;
+  height: 100%;
+  cursor: grab;
+}
+.sidebar .drag:active {
   cursor: grabbing;
 }
 
 .content {
-  visibility: hidden;
+  /* visibility: hidden; */
   display: flex;
   flex-direction: column;
 }
@@ -53,11 +57,10 @@ p {
   padding-left: 0;
   margin: 0;
   align-self: center;
-  width: 50%;
-  transition: transform 0.5s ease-in-out;
+  width: 40%;
 }
 .content p {
-  font-size: 1.3em;
+  font-size: 1.5em;
   margin: 0;
 }
 
@@ -65,10 +68,10 @@ svg.lucide {
   height: 2em;
   width: 2em;
   stroke-width: 1px;
+  stroke: #2d1913;
 }
 
 svg[data-lucide^="chevrons-"] {
-  stroke: #2d1913;
   position: absolute;
   top: 50%;
   right: 1em;
@@ -79,33 +82,45 @@ svg[data-lucide="chevron-up"],
 svg[data-lucide="chevron-down"] {
   height: 4em;
   width: 4em;
-  stroke-width: 0.5px;
-  stroke: #2d1913;
-  position: relative;
-  transform: translateX(-50%);
-}
-
-svg[data-lucide="chevron-up"] {
-  top: 10%;
-  left: 50%;
-}
-svg[data-lucide="chevron-down"] {
-  top: 75%;
-  left: 50%;
+  stroke-width: 1px;
+  display: flex;
+  align-self: center;
+  margin: 1.5em 0;
 }
 
 button {
   outline: none;
+  border: none;
   font-family: "Crimson Text", serif;
   font-weight: 400;
   font-weight: bold;
   font-size: 0.9em;
-  border: none;
+  margin-top: 5em;
   padding: 0.5em 2.5em;
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  align-self: center;
   border: 1px solid #2d1913;
   background: transparent;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer svg.lucide {
+  transition: color 0.5s ease-in-out;
+}
+footer .lucide {
+  margin-top: 4em;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  width: 40px;
+  height: 40px;
+  stroke-width: 1.5px;
+  stroke: #2d1913;
+}
+footer svg.lucide:hover {
+  color: blue;
+}
+footer a {
+  text-decoration: none;
 }

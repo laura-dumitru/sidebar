@@ -10,7 +10,11 @@ const arrowDown = document.querySelector(".arrow-down");
 const chevronsSelector = "[data-lucide^='chevrons-']";
 const chevrons = document.querySelector(chevronsSelector);
 
+const products = ["images/product1.png", "images/product2.png", "images/product3.png"];
+const productNames = ["Matte Lipstick", "Velvet Blush", "Porcelain Foundation"];
+
 let visibilityPercentage;
+let currentIndex = 0;
 
 drag.addEventListener("pointerdown", startDrag);
 
@@ -28,10 +32,14 @@ document.addEventListener("pointerup", (event) => {
 
   if (attribute === "chevron-up") {
     console.log("ARROW UP");
+    currentIndex = (currentIndex - 1 + products.length) % products.length;
+    updateImage(); // Update the displayed image
   }
 
   if (attribute === "chevron-down") {
     console.log("ARROW DOWN");
+    currentIndex = (currentIndex + 1) % products.length;
+    updateImage();
   }
 });
 
@@ -74,13 +82,10 @@ function handleMove(event) {
   }*/
 }
 
-/*
-arrowUp.addEventListener("pointerdown", function (event) {
-  //event.stopImmediatePropagation();
-  console.log("UP");
-});
+function updateImage() {
+  const image = document.querySelector(".image");
+  const paragraph = document.querySelector(".productname");
 
-arrowDown.addEventListener("pointerdown", function (event) {
-  //event.stopImmediatePropagation();
-  console.log("DOWN");
-});*/
+  image.src = products[currentIndex];
+  paragraph.textContent = productNames[currentIndex];
+}

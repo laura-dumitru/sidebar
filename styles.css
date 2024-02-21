@@ -1,11 +1,5 @@
-/*
-@font-face {
-  font-family: "LucideIcons";
-  src: url(https://unpkg.com/lucide-static@latest/font/Lucide.ttf) format("truetype");
-}*/
-
 body {
-  background-color: white;
+  background-color: #f9d8be;
   font-family: "Crimson Text", serif;
   font-weight: 400;
 }
@@ -21,6 +15,8 @@ main {
   overflow: hidden;
 }
 h1 {
+  margin: 0.5em 0;
+
   letter-spacing: 0.05em;
 }
 h1,
@@ -29,6 +25,7 @@ p {
 }
 
 .instructions {
+  margin: 0.5em 0;
   font-size: 1.5em;
 }
 .sidebar {
@@ -38,7 +35,7 @@ p {
   transform: translateX(-85%);
 }
 .sidebar .drag {
-  background-color: #f9d8be;
+  background-color: white;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -79,15 +76,18 @@ svg[data-lucide^="chevrons-"] {
   right: 1em;
   transform: translateY(-50%);
 }
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+}
 
 svg[data-lucide="chevron-up"],
 svg[data-lucide="chevron-down"] {
   height: 4em;
   width: 4em;
   stroke-width: 0.025em;
-  display: flex;
-  align-self: center;
   margin: 1.5em 0;
+  cursor: pointer;
 }
 a {
   align-self: center;
@@ -95,6 +95,7 @@ a {
 button {
   outline: none;
   border: none;
+  cursor: pointer;
   font-family: "Crimson Text", serif;
   font-weight: 400;
   font-weight: bold;

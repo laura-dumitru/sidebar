@@ -1,11 +1,18 @@
 @media (max-width: 900px) {
   body {
-    margin: 4px;
+    margin: 0;
+    padding: 0;
   }
   .instructions {
     font-size: 1.2em;
   }
   main {
-    width: auto;
+    width: 100vw;
+    /* height: 100vh; */
+    border: none;
+  }
+
+  h1 {
+    margin: 0;
   }
 }

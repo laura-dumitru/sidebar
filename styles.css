@@ -87,7 +87,9 @@ svg[data-lucide="chevron-down"] {
   align-self: center;
   margin: 1.5em 0;
 }
-
+a {
+  align-self: center;
+}
 button {
   outline: none;
   border: none;
@@ -97,30 +99,6 @@ button {
   font-size: 0.9em;
   margin-top: 5em;
   padding: 0.5em 2.5em;
-  align-self: center;
   border: 1px solid #2d1913;
   background: transparent;
-}
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-footer svg.lucide {
-  transition: color 0.5s ease-in-out;
-}
-footer .lucide {
-  margin-top: 4em;
-  margin-bottom: 1em;
-  margin-left: 1em;
-  width: 40px;
-  height: 40px;
-  stroke-width: 1.5px;
-  stroke: #2d1913;
-}
-footer svg.lucide:hover {
-  color: blue;
-}
-footer a {
-  text-decoration: none;
 }

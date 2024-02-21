@@ -20,7 +20,9 @@ main {
   border: 1px solid #2d1913;
   overflow: hidden;
 }
-
+h1 {
+  letter-spacing: 0.05em;
+}
 h1,
 p {
   text-align: center;
@@ -60,7 +62,7 @@ p {
   width: 40%;
 }
 .content p {
-  font-size: 1.5em;
+  font-size: 1.3em;
   margin: 0;
 }
 
@@ -82,7 +84,7 @@ svg[data-lucide="chevron-up"],
 svg[data-lucide="chevron-down"] {
   height: 4em;
   width: 4em;
-  stroke-width: 1px;
+  stroke-width: 0.025em;
   display: flex;
   align-self: center;
   margin: 1.5em 0;
@@ -98,6 +100,7 @@ button {
   font-weight: bold;
   font-size: 0.9em;
   margin-top: 5em;
+  letter-spacing: 0.05em;
   padding: 0.5em 2.5em;
   border: 1px solid #2d1913;
   background: transparent;

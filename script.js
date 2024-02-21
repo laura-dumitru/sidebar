@@ -17,6 +17,8 @@ let visibilityPercentage;
 let currentIndex = 0;
 
 drag.addEventListener("pointerdown", startDrag);
+drag.addEventListener("touchstart", startDrag);
+document.addEventListener("touchend", stopDrag);
 
 document.addEventListener("pointerup", (event) => {
   if (visibilityPercentage > 99) {
@@ -56,11 +58,17 @@ animation();
 
 function startDrag(event) {
   document.addEventListener("pointermove", handleMove);
+  document.addEventListener("touchmove", handleMove);
+  if (event.type === "touchstart") {
+    // If the event is a touch event
+    event = event.touches[0]; // Use the first touch
+  }
 }
 
 function stopDrag() {
   animation();
   document.removeEventListener("pointermove", handleMove);
+  document.removeEventListener("touchmove", handleMove);
 }
 
 function handleMove(event) {
@@ -74,12 +82,10 @@ function handleMove(event) {
   // Set the sidebar's position accordingly
   sidebar.style.transform = `translateX(${translateValue})`;
 
-  /*/ Adjust content visibility based on sidebar visibility
-  if (visibilityPercentage > 0) {
-    content.style.visibility = "visible";
-  } else {
-    content.style.visibility = "hidden";
-  }*/
+  if (event.type === "touchmove") {
+    // If the event is a touch event
+    event = event.touches[0]; // Use the first touch
+  }
 }
 
 function updateImage() {

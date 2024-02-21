@@ -2,17 +2,28 @@
   body {
     margin: 0;
     padding: 0;
-  }
-  .instructions {
-    font-size: 1.2em;
-  }
-  main {
-    width: 100vw;
-    /* height: 100vh; */
-    border: none;
+    background-color: white;
   }
 
-  h1 {
-    margin: 0;
+  .heading,
+  p {
+    display: none;
+  }
+
+  .content h1 {
+    margin-top: 1em;
+    font-size: 1.5em;
+  }
+
+  main {
+    width: 100vw;
+    max-height: 100%;
+    border: none;
+  }
+  .content img {
+    width: 60%;
+  }
+  button {
+    color: black;
   }
 }

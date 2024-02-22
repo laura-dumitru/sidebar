@@ -59,17 +59,18 @@ animation();
 function startDrag(event) {
   document.addEventListener("pointermove", handleMove);
   document.addEventListener("touchmove", handleMove);
-  console.log("touched");
+  //console.log("touched");
 }
 
 function stopDrag() {
   animation();
   document.removeEventListener("pointermove", handleMove);
   document.removeEventListener("touchmove", handleMove);
-  console.log("Stop touching");
+  //console.log("Stop touching");
 }
 
 function handleMove(event) {
+  event.preventDefault();
   const width = sidebar.clientWidth;
 
   let x;

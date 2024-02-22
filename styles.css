@@ -33,6 +33,7 @@ p {
   flex-direction: column;
   background-color: white;
   transform: translateX(-85%);
+  touch-action: none;
 }
 .sidebar .drag {
   background-color: white;
@@ -89,6 +90,7 @@ svg[data-lucide="chevron-down"] {
   margin: 1.5em 0;
   cursor: pointer;
 }
+
 a {
   align-self: center;
 }

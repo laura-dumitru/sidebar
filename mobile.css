@@ -1,8 +1,13 @@
 @media (max-width: 900px) {
+  html {
+    touch-action: manipulation;
+  }
   body {
     margin: 0;
     padding: 0;
+    min-height: -webkit-fill-available;
     background-color: white;
+    touch-action: manipulation;
   }
 
   .heading,
@@ -10,16 +15,19 @@
     display: none;
   }
 
-  .content h1 {
-    margin-top: 1em;
-    font-size: 1.5em;
-  }
-
   main {
     width: 100vw;
     height: 100vh;
+    height: -webkit-fill-available;
     border: none;
-    background-position: center;
+  }
+
+  .content {
+    margin-top: 2em;
+    touch-action: manipulation;
+  }
+  .content h1 {
+    font-size: 1.5em;
   }
   .content img {
     width: 60%;

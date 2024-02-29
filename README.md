@@ -18,4 +18,8 @@ Follow the arrow direction and drag the sidebar to the right to open and to the 
 git clone https://github.com/laura-dumitru/sidebar.git
 ```
 
+## Current issues
+
+Double tapping on the up and down arrows will zoom in on the page. When flicking through the gallery try not to double tap the arrows.
+
 Since this is an example project I would encourage you to clone and rename it so that you can use it for your own purposes.

@@ -70,7 +70,7 @@ function stopDrag() {
 }
 
 function handleMove(event) {
-  event.preventDefault();
+  //event.preventDefault();
   const width = sidebar.clientWidth;
 
   let x;

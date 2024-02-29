@@ -2,11 +2,13 @@ body {
   background-color: #f9d8be;
   font-family: "Crimson Text", serif;
   font-weight: 400;
+  min-height: 100vh;
 }
 
 main {
   display: flex;
   margin: 0 auto;
+  padding: 0;
   width: 33vw;
   height: 80vh;
   background-image: url(images/background.jpg);
@@ -16,7 +18,6 @@ main {
 }
 h1 {
   margin: 0.5em 0;
-
   letter-spacing: 0.05em;
 }
 h1,
@@ -52,6 +53,8 @@ p {
   /* visibility: hidden; */
   display: flex;
   flex-direction: column;
+  margin-top: 3em;
+  /* pointer-events: none; */
 }
 .content img {
   padding-left: 0;

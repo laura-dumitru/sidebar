@@ -23,3 +23,7 @@ git clone https://github.com/laura-dumitru/sidebar.git
 Double tapping on the up and down arrows on the mobile will zoom in on the page. When flicking through the gallery try not to double tap the arrows.
 
 Since this is an example project I would encourage you to clone and rename it so that you can use it for your own purposes.
+
+## Employers
+
+You can see the original code I built while working at Mobkoi here: [Link to my gist](https://gist.github.com/laura-dumitru/f3c71f6b023afed943f11c0d6bd6f211)

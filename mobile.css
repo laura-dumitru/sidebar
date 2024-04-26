@@ -25,12 +25,15 @@
   .content {
     margin-top: 2em;
     touch-action: manipulation;
+    padding-left: 6em;
+    padding-right: 6em;
   }
   .content h1 {
     font-size: 1.5em;
   }
 
   button {
+    margin-bottom: 4em;
     color: black;
   }
 }

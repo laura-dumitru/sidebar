@@ -54,13 +54,11 @@ p {
   display: flex;
   flex-direction: column;
   margin-top: 3em;
-  /* pointer-events: none; */
 }
 .content img {
-  padding-left: 0;
-  margin: 0;
   align-self: center;
-  max-height: 130px;
+  max-height: 16em;
+  margin: 0 18em;
 }
 .content p {
   font-size: 1.3em;
